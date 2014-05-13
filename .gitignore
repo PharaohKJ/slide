@@ -4,3 +4,10 @@ log/*.log
 tmp/**
 node_modules/
 .sass-cache
+!data
+!data/*/
+!*.md
+!*.html
+!*.png
+!*.svg
+
