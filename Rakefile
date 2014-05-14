@@ -8,21 +8,27 @@ task :start => 'sinatra:start'
 desc "local webserver stop"
 task :stop => 'sinatra:stop'
 
-desc "local webserver start => http://localhost:3000/"
+desc "local webserver start (without guard-livereload)  => http://localhost:3000/"
 task :run => 'sinatra:run'
 
 namespace :sinatra do
-  RUNCOMMAND = "rbenv exec bundle exec ruby -rsinatra -e 'set :port, 3000; set :public_folder, \"./\"; set :environment, :producntion; get(\"/\"){send_file File.join(settings.public_folder, \"index.html\")}'"
-  STARTCOMMAND = RUNCOMMAND + " >/dev/null 2>&1 &"
-  STOPCOMMAND = 'kill `ps auxww |grep "[r]uby -rsinatra -e set :port, 3000; set :public_folder, \"./\";" |awk \'{print $2}\'` >/dev/null 2>&1 &'
+  STARTSINATRA = "ruby -rsinatra -e 'set :port, 3000; set :public_folder, \"./\"; set :environment, :producntion; get(\"/\"){send_file File.join(settings.public_folder, \"index.html\")}'"
+  STOPSINATRA  = 'kill `ps auxww |grep "[r]uby -rsinatra -e set :port, 3000; set :public_folder, \"./\";" |awk \'{print $2}\'`'
+
+  STARTGUARD   = 'guard -i'
+  STOPGUARD    = 'kill `ps auxww |grep "[g]uard -i" |awk \'{print $2}\'`'
 
   task :run do
-    sh RUNCOMMAND
+    sh STARTSINATRA
   end
   task :start do
-    sh STARTCOMMAND
+    sh STARTSINATRA + " >/dev/null 2>&1 &"
+    sh STARTGUARD   + " >/dev/null 2>&1 &"
+    p ""
+    p "http://localhost:3000/"
   end
   task :stop do
-    sh STOPCOMMAND
+    sh STOPSINATRA + " >/dev/null 2>&1 &"
+    sh STOPGUARD   + " >/dev/null 2>&1 &"
   end
 end

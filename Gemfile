@@ -2,6 +2,9 @@
 
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'rake'
+group :development do
+  gem 'sinatra'
+  gem 'rake'
+  gem 'guard-livereload'
+end
 
