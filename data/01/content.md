@@ -1,1 +1,1 @@
-anyenv---123--456
+---anyenv--+ **env系の簡易マネージャ+ 以下のようなものがまとめて管理できる (2014/05)  - denv ( dlang / D )  - goenv ( golang / Go )  - jenv ( Java )  - luaenv ( Lua )  - ndenv ( node.js )  - phpenv ( PHP )  - plenv ( Perl )  - pyenv ( Python )  - rbenv ( Ruby )--

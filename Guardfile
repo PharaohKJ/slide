@@ -3,4 +3,5 @@
 
 guard 'livereload' do
   watch(%r{data/.+\.(md|html)})
+  watch(%r{css/theme/default.css})
 end
