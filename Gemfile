@@ -3,6 +3,5 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'github-markdown'
 gem 'rake'
 
