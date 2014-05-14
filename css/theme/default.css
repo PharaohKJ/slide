@@ -26,7 +26,7 @@ body {
 
 .reveal {
   font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Lato", sans-serif;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: normal;
   letter-spacing: -0.02em;
   color: #eeeeee; }
@@ -45,12 +45,12 @@ body {
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  margin: 0 0 20px 0;
+  margin: 0 0 30px 0;
   color: #eeeeee;
-  font-family: "League Gothic", Impact, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "League Gothic", Impact, sans-serif;
   line-height: 0.9em;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
+  text-transform: none;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
 
 .reveal h1 {
