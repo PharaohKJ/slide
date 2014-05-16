@@ -24,8 +24,8 @@ namespace :sinatra do
   task :start do
     sh STARTSINATRA + " >/dev/null 2>&1 &"
     sh STARTGUARD   + " >/dev/null 2>&1 &"
-    p ""
-    p "http://localhost:3000/"
+    puts "\n"
+    puts "http://localhost:3000/"
   end
   task :stop do
     sh STOPSINATRA + " >/dev/null 2>&1 &"
